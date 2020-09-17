@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="144db5a7-b64b-40a1-846e-6f269d35cc97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../4_Git_HTML/Bài_Tap/4_Tao-CV_CaNhan.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../4_Git_HTML/Bài_Tap/test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../4_Git_HTML/Bài_Tap/test2.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../4_Git_HTML/4_GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../4_Git_HTML/4_GitProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4_Git_HTML/Bài_Tap/4_BaiTap_Tao_Trang_Ca_Nhan.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../4_Git_HTML/Bài_Tap/4_BaiTap_Tao_Trang_Ca_Nhan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4_Git_HTML/Bài_Tap/4_Tao-CV_CaNhan.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../4_Git_HTML/Bài_Tap/4_Tao-CV_CaNhan.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../4_Git_HTML/Bài_Tap/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../4_Git_HTML/Bài_Tap/test.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +56,7 @@
       <updated>1600306118150</updated>
       <workItem from="1600306119349" duration="2135000" />
       <workItem from="1600313157730" duration="1619000" />
-      <workItem from="1600317085364" duration="4976000" />
+      <workItem from="1600317085364" duration="5955000" />
     </task>
     <servers />
   </component>
@@ -64,10 +64,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1600317162874">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1600327006109">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600317162874" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600327006109" />
     <state x="431" y="145" key="search.everywhere.popup" timestamp="1600311966631">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
