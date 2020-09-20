@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div.container {
+            width: 30%;
+            border: 10px solid cornflowerblue;
+            margin: auto;
+        }
+        header {
+            padding: 0px;
+            color: white;
+            background-color: orange;
+            text-align: center;
+    </style>
+</head>
+<body>
+<div class="container">
+   <header><h2>Sở thích của bạn</h2></header>
+    <table>
+
+    <tr>
+        <td></td>
+    </tr>
+    <tr>
+        <td>
+            <label><b>Họ và tên</b></label>
+        </td>
+        <td>
+            <input type="text" maxlength="80" placeholder="Họ và tên"/>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label><b>Email</b></label>
+        </td>
+        <td>
+            <input type="text"/>
+        </td>
+    </tr>
+    <tr style="row-span: 4">
+        <td>
+            <label><b>Sở thích</b></label>
+        </td>
+        <td>
+            <input type="checkbox" name="hobby" > Thể thao
+            <input type="checkbox" name="hobby" > Thể thao
+
+            <input type="checkbox" name="hobby" > Thể thao <br>
+            <input type="checkbox" name="hobby" > Thể thao
+            <input type="checkbox" name="hobby" > Thể thao
+            <input type="checkbox" name="hobby" > Thể  thao <br>
+            <input type="checkbox" name="hobby" > Thể thao <br>
+        </td>
+
+    </table>
+    <div style="padding-left: 100px">
+    <input type="submit" value="Gửi thông tin" name="submit">
+    <input type="reset" value="Nhập lại" name="reset">
+    </div>
+</div>
+</body>
+</html>
