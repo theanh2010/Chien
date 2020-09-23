@@ -1,27 +1,16 @@
+
 function display(value){
     if (value === "="){
-        document.getElementById("showOld").innerText = document.getElementById("show").value;
-        document.getElementById("show").value = eval(document.getElementById("show").value);
-    }else if(document.getElementById("show").value === "0"){
-        document.getElementById("show").value = value;
+        document.getElementById("hangTren").innerText = document.getElementById("hangDuoi").value;
+        document.getElementById("hangDuoi").value = eval(document.getElementById("hangDuoi").value);
     }else {
-        document.getElementById("show").value += value;
+        document.getElementById("hangDuoi").value +=value;
     }
 }
-let equalTo = document.getElementById("equalTo");
-bang.addEventListener('click', equalTo2);
-function equalTo2() {
-    document.getElementById("display1").innerText = document.getElementById("display2").value;
-    document.getElementById("display2").value = eval(document.getElementById("display2").value);
-}
-
+//xóa dữ liệu
 let clear = document.getElementById("c");
-clear.addEventListener("click", clean);
-function clean() {
-    document.getElementById("display2").value = "";
+clear.addEventListener("click", clear1);
+function clear1() {
+    document.getElementById("hangDuoi").value = "";
 }
 
-function clean2() {
-    let value = document.getElementById("display2").value ;
-    document.getElementById("display2").value = value.substr(0, value.length -1);
-}
