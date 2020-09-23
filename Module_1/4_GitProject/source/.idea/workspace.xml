@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="144db5a7-b64b-40a1-846e-6f269d35cc97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../../6_Tong_Quan_JS/Thuc_Hanh/6_Thuc_Hanh_Hien_Thi_Dau_Ra.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../6_Tong_Quan_JS/Thuc_Hanh/6_Thuc_Hanh_Nhúng_JS.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../7_Bien_va_Kieu_Du_Lieu/Thuc_Hanh/7_BT_1.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../7_Bien_va_Kieu_Du_Lieu/Thuc_Hanh/7_BT_1_JS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../7_Bien_va_Kieu_Du_Lieu/Thuc_Hanh/7_BT_May_Tinh.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../7_Bien_va_Kieu_Du_Lieu/Thuc_Hanh/7_Thuc_Hanh_Khai_Bao.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../7_Bien_va_Kieu_Du_Lieu/Thuc_Hanh/7_Thuc_Hanh_Toan_Tu.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../7_Bien_va_Kieu_Du_Lieu/Thuc_Hanh/7_Thuc_Hanh_Toan_Tu_JS.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../7_Bien_va_Kieu_Du_Lieu/Thuc_Hanh/ThucHanh_Js.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../4_Git_HTML/4_GitProject" beforeDir="false" afterPath="$PROJECT_DIR$/../../4_Git_HTML/4_GitProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../5_HTML_Form_Table/Bai_Tap/te.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../5_HTML_Form_Table/Bai_Tap/te.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +69,7 @@
       <workItem from="1600668923947" duration="8131000" />
       <workItem from="1600658949512" duration="2860000" />
       <workItem from="1600784059540" duration="2399000" />
-      <workItem from="1600823514612" duration="1396000" />
+      <workItem from="1600823514612" duration="1606000" />
     </task>
     <servers />
   </component>
@@ -92,10 +81,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="447" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1600524511237" />
-    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1600677110288">
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1600825131108">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600677110288" />
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1600825131108" />
     <state x="431" y="145" key="search.everywhere.popup" timestamp="1600311966631">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
