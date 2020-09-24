@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container{
+            width: 30%;
+            height: 100%;
+            background: beige;
+            border: 1px solid black;
+            text-align: center;
+        }
+        div {
+            margin-top: 10px;
+        }
+       .container2{
+           width: 20%;
+           height: 100%;
+           background: mistyrose;
+           border: 1px solid black;
+           padding-left: 20px;
+       }
+    </style>
+</head>
+<body>
+<div class="bground">
+<form class="container">
+    <div id="inputCustomer" >
+            <div><label for="name">Họ và Tên</label><br><input id="name" type="text" name="name"> <br></div>
+            <div><label for="cmnd">Số CMND</label> <br><input id="cmnd" type="text" name="cmnd"> <br></div>
+            <div><label for="birthDate">Ngày Sinh</label> <input id="birthDate" type="date" name="birthDate"> <br></div>
+            <div><label for="email">Email</label><br> <input id="email" type="text" name="email"> <br></div>
+            <div><label for="address">Địa chỉ</label> <br><input id="address" type="text" name="address"> <br></div>
+            <div><label for="customer">Loại Customer</label>
+                <select id="customer">
+                    <option>Diamond</option>
+                    <option>Platinum</option>
+                    <option>Gold</option>
+                    <option>Silver</option>
+                    <option>Member</option>
+                </select>
+            </div>
+
+            <div><label for="discount">Giảm giá</label> <br><input id="discount" type="text" name="discount"> <br></div>
+            <div><label for="amount">Số lượng đi kèm</label><br> <input id="amount" type="text" name="amount"> <br></div>
+            <div><label for="rentDays">Số ngày thuê</label> <br><input id="rentDays" type="text" name="rentDays"> <br></div>
+            <div ><label for="sevice">Loại Dịch vụ</label>
+                <select id="sevice">
+                    <option value="Villa">Villa</option>
+                    <option value="House">House</option>
+                    <option value="Room">Room</option>
+                </select>
+            </div>
+            <div ><label for="room">Loại Phòng thuê</label>
+                    <select id="room">
+                        <option value="Vip">Vip</option>
+                        <option value="Business">Business</option>
+                        <option value="Normal">Normal</option>
+                    </select>
+                </div>
+            <div><input type="button" value="Đặt Phòng" onclick="input();"></div>
+    </div>
+</form>
+</div>
+<br>
+<form class="container2">
+    <div id="outputCustomer" >
+        <span>Name: </span><span id="displayName" ></span><br>
+        <span>CMND: </span><span id="displayCmnd" ></span><br>
+        <span>email: </span><span id="displayemail" ></span><br>
+        <span>birthDate: </span><span id="displayBirthDate" ></span><br>
+        <span>address: </span><span id="displayAddress" ></span><br>
+        <span>customer: </span><span id="displayCustomer" ></span><br>
+        <span>sale: </span><span id="displayDiscount" ></span><br>
+        <span>amount: </span><span id="displayAmount" ></span><br>
+        <span>rentDays: </span><span id="displayRentDays" ></span><br>
+        <span>sevice: </span><span id="displaySevice" ></span><br>
+        <span>room: </span><span id="displayRoom1" ></span><br>
+        <span>Chi Phí: </span><span id="displayCost"></span>
+    </div>
+</form>
+<script src="Request_1_JS.js"></script>
+</body>
+</html>
