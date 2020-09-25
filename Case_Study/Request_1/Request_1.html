@@ -21,6 +21,9 @@
            border: 1px solid black;
            padding-left: 20px;
        }
+        table, tr, td, th {
+            border: 1px solid black;
+        }
     </style>
 </head>
 <body>
@@ -45,8 +48,8 @@
             <div><label for="discount">Giảm giá</label> <br><input id="discount" type="text" name="discount"> <br></div>
             <div><label for="amount">Số lượng đi kèm</label><br> <input id="amount" type="text" name="amount"> <br></div>
             <div><label for="rentDays">Số ngày thuê</label> <br><input id="rentDays" type="text" name="rentDays"> <br></div>
-            <div ><label for="sevice">Loại Dịch vụ</label>
-                <select id="sevice">
+            <div ><label for="service">Loại Dịch vụ</label>
+                <select id="service">
                     <option value="Villa">Villa</option>
                     <option value="House">House</option>
                     <option value="Room">Room</option>
@@ -64,22 +67,39 @@
 </form>
 </div>
 <br>
-<form class="container2">
-    <div id="outputCustomer" >
-        <span>Name: </span><span id="displayName" ></span><br>
-        <span>CMND: </span><span id="displayCmnd" ></span><br>
-        <span>email: </span><span id="displayemail" ></span><br>
-        <span>birthDate: </span><span id="displayBirthDate" ></span><br>
-        <span>address: </span><span id="displayAddress" ></span><br>
-        <span>customer: </span><span id="displayCustomer" ></span><br>
-        <span>sale: </span><span id="displayDiscount" ></span><br>
-        <span>amount: </span><span id="displayAmount" ></span><br>
-        <span>rentDays: </span><span id="displayRentDays" ></span><br>
-        <span>sevice: </span><span id="displaySevice" ></span><br>
-        <span>room: </span><span id="displayRoom1" ></span><br>
-        <span>Chi Phí: </span><span id="displayCost"></span>
-    </div>
-</form>
+<div>
+<table>
+    <tr>
+        <th>Tên khách hàng</th>
+        <th>CMND</th>
+        <th>Email</th>
+        <th>Ngày sinh</th>
+        <th>Địa Chỉ</th>
+        <th>Loại khách hàng</th>
+        <th>Giảm giá</th>
+        <th>Số lượng</th>
+        <th>Ngày thuê</th>
+        <th>Loại dịch vụ</th>
+        <th>Loại phòng</th>
+        <th>Tổng Chi phí</th>
+    </tr>
+    <tr>
+        <td id="displayName">Trần Minh Chiến</td>
+        <td id="displayCmnd">044098xxxxxx</td>
+        <td id="displayEmail">Chien@gmail.com</td>
+        <td id="displayBirthDate">1/1/2000</td>
+        <td id="displayAddress">Nguyễn Tất Thành - Đà Nẵng</td>
+        <td id="displayCustomer">Diamond</td>
+        <td id="displayDiscount">100</td>
+        <td id="displayAmount">10</td>
+        <td id="displayRentDays">10</td>
+        <td id="displayService">Villa</td>
+        <td id="displayRoom">Vip</td>
+        <td id="displayCost"></td>
+    </tr>
+</table>
+    <input type="button" value="edit" onclick="edit()">
+</div>
 <script src="Request_1_JS.js"></script>
 </body>
 </html>

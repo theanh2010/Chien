@@ -8,8 +8,8 @@ function display(value){
     }
 }
 //xóa dữ liệu
-let clear = document.getElementById("c");
-clear.addEventListener("click", clear1);
+// let clear = document.getElementById("c");
+// clear.addEventListener("click", clear1);
 function clear1() {
     document.getElementById("hangDuoi").value = "";
 }
