@@ -11,7 +11,7 @@ let service = document.getElementById('service');
 let room = document.getElementById('room');
 
 
-//Hàm lấy thông tin
+//Hàm lấy thông tin xuống hồ sơ
 
 function input() {
     document.getElementById('displayName').innerText = name.value;
@@ -25,8 +25,6 @@ function input() {
     document.getElementById('displayRentDays').innerText = rentDays.value;
     document.getElementById('displayService').innerText = service.value;
     document.getElementById('displayRoom').innerText = room.value;
-    // let discountAddress = parseInt(address.value);
-    // let discountCustomer = parseInt(customer.value);
     //Tính Tiền phải trả
     let discountUp = parseInt(discount.value);
     let rentDay = parseInt(rentDays.value);
@@ -84,6 +82,7 @@ function linkCustomer() {
     }
      return discountCustomer;
 }
+//Giảm giá từ Ngày Thuê
 function linkRentDays() {
     let discountRentDays ;
     if (rentDays.value > 7 ){
@@ -97,7 +96,7 @@ function linkRentDays() {
     }
     return discountRentDays;
 }
-
+//Đẩy thoogn tin từ Hồ sơ len trên
 function edit() {
     let tempName = document.getElementById('displayName').textContent;
     name.value = tempName;
@@ -122,21 +121,5 @@ function edit() {
     let tempRoom = document.getElementById('displayRoom').textContent;
     room.value = tempRoom;
 }
-// function linkAddress() {
-//     let discountAddress;
-//     switch (address.value) {
-//         case "Đà Nẵng" :
-//             discountAddress = - '20 ;
-//             break;
-//         case "Huế" :
-//             discountAddress = - '10';
-//             break;
-//         case "Quảng Nam" :
-//             discountAddress = - '5';
-//             break;
-//         default :
-//             discountAddress = '0';
-//     }
-//     // return discountAddress;
-// }
+
 
