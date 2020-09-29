@@ -77,12 +77,12 @@
 //                   document.writeln("Buzz" + i +"<br>");
 //               }
 //           }
-
+// Bài 8; Game đoán số:
 function batDau() {
     let a = parseInt(prompt("Bạn muốn đoán trong khoảng từ số:"));
     let b = parseInt(prompt("Đến số."));
     let c = parseInt(prompt("Bạn đoán số nào trong khoảng" + a + " đến " + b));
-    let d = Math.round(Math.random() * b + a);
+    let d = Math.round(Math.random() * (b-a) + a);
     for (let i = 3; i > 0; i--) {
         if (c > d) {
             c = parseInt(prompt("Số bạn nhập lớn hơn "+ " bạn còn "+i+"Lần nhập"));
