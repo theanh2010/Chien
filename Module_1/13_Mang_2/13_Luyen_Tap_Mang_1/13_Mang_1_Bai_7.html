@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let arr = new Array(10);
+    // let arr2 = new Array(10);
+    //NHập mảng
+    for (let i = 0; i < arr.length ; i++) {
+        arr[i] = parseInt(prompt("Nhập 10 số : "));
+    }
+    //Nhâp và xóa số nhập vào.
+    let V = parseInt(prompt("Nhập số cần xóa: "));
+    for ( let j = 0 ; j < arr.length ; j++){
+        if (arr.indexOf(V) == j ){
+            arr.slice(j,1);
+            document.writeln(arr);
+        }
+    }
+</script>
+</html>
