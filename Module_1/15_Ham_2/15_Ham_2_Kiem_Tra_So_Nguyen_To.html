@@ -10,40 +10,21 @@
 <script>
     let n ;
     function check(num) {
-        if (num < 3){
-            alert('Không phải số nguyên tố.');
-        }   else {
-            for (n = 2; n < num ; n++){
-                if (num % n == 0){
-                    alert('Không phải nguyên tố');
-                    break;
-                } else {
-                    alert('Là số nguyên tố')
+            for (n = 1; n < num ; n++){
+                let dem = 0;
+                for (t = 2 ; t <= Math.sqrt(n) ; t++){
+                    if (n % t === 0){
+                        dem++ ;
+                    }
                 }
+                    if (dem == 0 && n > 1){
+                        document.writeln(n);
+                    }
             }
-        }
     }
+    let t ;
     let a = parseInt(prompt('Nhập số kiểm tra'));
     check(a);
-    // let numbers = parseInt(prompt("Nhập số lượng số nguyên tố: "));
-    // while (numbers !== 0) {
-    //     let count = 0;
-    //     let n = 2;
-    //     while (count < numbers) {
-    //         let dem = 0;
-    //         for (let i = 1; i <= n; i++) {
-    //             if (n % i === 0) {
-    //                 dem++;
-    //             }
-    //         }
-    //         if (dem === 2) {
-    //             document.writeln(n);
-    //             count++;
-    //         }
-    //         n++;
-    //     }
-    //     numbers = parseInt(prompt("Nhập số lượng số nguyên tố: "));
-    //     //    Nhập lại 0 sẽ in ra kết quả.
-    // }
+
 </script>
 </html>
