@@ -44,6 +44,7 @@
             }
             let chooseDisplay = parseInt(prompt(result));
             alert("Lương của nhân viên: " + listEmployee[chooseDisplay].getName() + " là: " + listEmployee[chooseDisplay].getSalary());
+            displayMainMenu();
         }
 
         function displayInfomation() {
@@ -58,6 +59,7 @@
             "CMND: " + listEmployee[chooseDisplay].getCmnd() + "\n" +
             "Vị trí: " + listEmployee[chooseDisplay].getLocation() + "\n" +
             "Trình độ: " + listEmployee[chooseDisplay].getLevel() + "\n" )
+            displayMainMenu();
         }
 
         function addNewEmployee() {

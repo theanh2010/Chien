@@ -28,6 +28,18 @@
                 addNewCustomer();
                 break;
             }
+            case 2: {
+                displayCustomer();
+                break;
+            }
+            case 3: {
+                editCustomer();
+                break ;
+            }
+            case 4: {
+                deleteCustomer();
+                break ;
+            }
             case 5:{
                 displayTotalPays();
             }
@@ -39,15 +51,138 @@
             temp += i + ". Name: "+ listCustomer[i].getName() + "\n" ;
         }
         let chooseDisplay = parseInt(prompt(temp));
-        alert("Tổng chi phí của bạn là: " + listCustomer[chooseDisplay].totalPays())
+        alert("Tổng chi phí của bạn là: " + listCustomer[chooseDisplay].getTotalPays());
     }
+
+    function deleteCustomer (){
+        let temp = "";
+        for (let i = 0; i < listCustomer.length; i++){
+            temp += i + ". Name: "+ listCustomer[i].getName() + "\n" ;
+        }
+        let chooseDelete = parseInt(prompt(temp));
+        let check = parseInt(prompt("Bạn muốn xóa thông tin khách hàng này?"+
+            "\n 1.Có"+
+            "\n 2.Không"))
+        if (check === 1) {
+            listCustomer.splice(chooseDelete,1);
+            alert("Bạn đã xóa thành công.")
+        } else {
+            alert('Cancel');
+        }
+        displayMainMenu();
+    }
+
+    function displayCustomer() {
+        let temp = "";
+        for (let i = 0; i < listCustomer.length; i++){
+            temp += i + ". Name: "+ listCustomer[i].getName() + "\n" ;
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("tên: "+listCustomer[chooseDisplay].getName()+
+            "\n cmnd: "+listCustomer[chooseDisplay].getCmnd()+
+            "\n Ngay Sinh: "+listCustomer[chooseDisplay].getBirthDay()+
+            "\n Email: "+listCustomer[chooseDisplay].getEmail()+
+            "\n Địa chỉ: "+listCustomer[chooseDisplay].getAddress()+
+            "\n Loai dịch vụ: "+listCustomer[chooseDisplay].getTypeService()+
+            "\n Loai Phòng: "+listCustomer[chooseDisplay].getTypeRoom()+
+            "\n Loai Khách hàng: "+listCustomer[chooseDisplay].getTypeCustomer()+
+            "\n Giảm giá: "+listCustomer[chooseDisplay].getDiscount()+
+            "\n Số lượng đi kèm: "+listCustomer[chooseDisplay].getAmount()+
+            "\n Số ngày thuê: "+ listCustomer[chooseDisplay].getRentDays()+
+            "\n Chi Phí: "+ listCustomer[chooseDisplay].getTotalPays());
+        displayMainMenu();
+    }
+
+    function editCustomer(){
+        let temp = "";
+        for (let i = 0; i < listCustomer.length; i++){
+            temp += i + ". Name: "+ listCustomer[i].getName() + "\n" ;
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        let edit =  parseInt(prompt("1.tên: " + listCustomer[chooseDisplay].getName() +
+            "\n2.cmnd: "+listCustomer[chooseDisplay].getCmnd()+
+            "\n3.Ngay Sinh: "+listCustomer[chooseDisplay].getBirthDay()+
+            "\n4.Email: "+listCustomer[chooseDisplay].getEmail() +
+            "\n5.Địa chỉ: "+listCustomer[chooseDisplay].getAddress()+
+            "\n6.Loai dịch vụ: "+listCustomer[chooseDisplay].getTypeService()+
+            "\n7.Loai Phòng: "+listCustomer[chooseDisplay].getTypeRoom()+
+            "\n8.Loai Khách hàng: "+listCustomer[chooseDisplay].getTypeCustomer()+
+            "\n 9.Giảm giá: "+listCustomer[chooseDisplay].getDiscount()+
+            "\n 10.Số lượng đi kèm: "+listCustomer[chooseDisplay].getAmount()+
+            "\n 11.Số ngày thuê: "+ listCustomer[chooseDisplay].getRentDays()+
+            "\n 12.Chi phí: "+listCustomer[chooseDisplay].getTotalPays())) ;
+        switch (edit) {
+            case 1:{
+                listCustomer[chooseDisplay][0] = prompt("Nhập lại tên: ");
+                break;
+            }
+            case 2:{
+                arrListCustomer[chooseDisplay][1] = prompt("Nhập lại CMND: ");
+                break;
+            }
+            case 3:{
+                arrListCustomer[chooseDisplay][2] = prompt("Nhập lại Ngày sinh: ");
+                break;
+            }
+            case 4:{
+                arrListCustomer[chooseDisplay][3] = prompt("Nhập lại Email: ");
+                break;
+            }
+            case 5:{
+                arrListCustomer[chooseDisplay][4] = prompt("Nhập lại Địa chỉ: ");
+                break;
+            }
+            case 6:{
+                arrListCustomer[chooseDisplay][5] = prompt("Nhập lại Loại dịch vụ: ");
+                break;
+            }case 7:{
+                arrListCustomer[chooseDisplay][6] = prompt("Nhập lại Loại Phòng: ");
+                break;
+            }case 8:{
+                arrListCustomer[chooseDisplay][7] = prompt("Nhập lại Loại Khách hàng: ");
+                break;
+            }case 9:{
+                arrListCustomer[chooseDisplay][8] = prompt("Nhập lại Giảm giá: ");
+                break;
+            }case 10:{
+                arrListCustomer[chooseDisplay][9] = prompt("Nhập lại Số lượng đi kèm: ");
+                break;
+            }case 11:{
+                arrListCustomer[chooseDisplay][10] = prompt("Nhập lại Số ngày thuê: ");
+                break;
+            }
+
+            default: {
+                alert("Failed");
+            }
+        }
+        editCustomer();
+        displayMainMenu();
+    }
+
 
     function addNewCustomer() {
         let checkValid = false ;
         let cus = new Customer();
-        let name = prompt('Nhập tên: ');
+        let name ;
+        //Kiểm tra tên
+        let tempName = "";
+        name = prompt('Nhập tên: ');
+        name = name.trim().toLowerCase();
+        for (let i = 0; i < name.length; i++){
+            if (name.charAt(i) === " " && name.charAt(i + 1)=== " ") {
+                continue;
+            }
+            if (i === 0 || name.charAt(i-1) === " "){
+                tempName += name.charAt(i).toUpperCase();
+                continue;
+            }
+            tempName += name.charAt(i);
+        }
+        name = tempName;
+        //
         let cmnd ;
-        let birthday ;
+        let birthDay ;
         let email ;
         let address = prompt('Nhập địa chỉ: ');
         let typeService = prompt('Nhập loại dịch vụ: ');
@@ -119,7 +254,7 @@
         //
         cus.setName(name);
         cus.setCmnd(cmnd);
-        cus.setBirthday(birthday);
+        cus.setBirthDay(birthDay);
         cus.setEmail(email);
         cus.setAddress(address);
         cus.setTypeService(typeService);
@@ -128,6 +263,7 @@
         cus.setDiscount(discount);
         cus.setAmount(amount);
         cus.setRentDays(rentDays);
+        // cus.getTotalPays(totalPays);
         listCustomer.push(cus);
         alert("Đã thêm thành công");
         displayMainMenu();
