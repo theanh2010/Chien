@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="Customer.js"></script>
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let regexEmail = /\S+@\S+\.\S+/ ;
+    let regexBirthday = /^\d{2}[./-]\d{2}[./-]\d{4}$/ ;
+    let regexCmnd = /^[\d]{8,8}$/ ;
+    let regexDiscount = /^\d+$/ ;
+    let regexAmount = /^\d+$/ ; 
+    let regexRentDays = /^\d+$/ ;
+    let listCustomer = [];
+    function displayMainMenu() {
+        let choose = parseInt(prompt("1. Them mới khách hàng: " +
+            "\n 2. Hiển thị thông tin khách hàng"+
+            "\n 3. Chỉnh sửa thông tin khách hàng"+
+            "\n 4. Xóa thông tin khách hàng"+
+            "\n 5. Tổng chi phí"+
+            "\n 6. Exit"));
+        switch (choose) {
+            case 1:{
+                addNewCustomer();
+                break;
+            }
+            case 5:{
+                displayTotalPays();
+            }
+        }
+    }
+    function displayTotalPays() {
+        let temp = "";
+        for (let i = 0; i < listCustomer.length; i++){
+            temp += i + ". Name: "+ listCustomer[i].getName() + "\n" ;
+        }
+        let chooseDisplay = parseInt(prompt(temp));
+        alert("Tổng chi phí của bạn là: " + listCustomer[chooseDisplay].totalPays())
+    }
+
+    function addNewCustomer() {
+        let checkValid = false ;
+        let cus = new Customer();
+        let name = prompt('Nhập tên: ');
+        let cmnd ;
+        let birthday ;
+        let email ;
+        let address = prompt('Nhập địa chỉ: ');
+        let typeService = prompt('Nhập loại dịch vụ: ');
+        let typeRoom = prompt('Nhập loại phòng: ');
+        let typeCustomer = prompt('Nhập loại Khách hàng: ');
+        let discount ;
+        let amount ;
+        let rentDays ;
+        //Kiểm tra CMND
+        do {
+            cmnd = prompt('Nhập cmnd: ');
+            if (regexCmnd.test(cmnd)){
+                checkValid = true;
+            } else {
+                alert("Không hợp lệ CMND");
+            }
+        } while (!checkValid);
+        checkValid = false ;
+        //Kiểm tra ngày sinh
+        do {
+            birthday = prompt('Nhập ngày sinh: ');
+            if (regexBirthday.test(birthday)){
+                checkValid = true ;
+            } else {
+                alert("Ngày sinh khoonghowpj lệ");
+            }
+        } while (!checkValid)
+        checkValid = false ;
+        //Kiểm tra email
+        do {
+            email = prompt('Nhập email: ');
+            if (regexEmail.test(email)){
+                checkValid = true;
+            } else {
+                alert("Email không hợp lệ, vui lòng nhập lại.");
+            }
+        } while (!checkValid)
+        checkValid = false ;
+        //KIểm tra giảm giá
+        do {
+            discount = prompt('Nhập giảm giá: ');
+            if (regexDiscount.test(discount)){
+                checkValid = true;
+            } else {
+                alert("Mã giảm giá không hợp lệ");
+            }
+        } while (!checkValid)
+        checkValid = false ;
+        //KIểm tra số lượng đi kèm.
+        do {
+            amount = prompt('Nhập số lượng đi kèm: ');
+            if (regexAmount.test(discount)){
+                checkValid = true;
+            } else {
+                alert("Số lượng đi kèm không hợp lệ");
+            }
+        } while (!checkValid)
+        checkValid = false ;
+        //KIểm tra số ngày thuê
+        do {
+            rentDays = prompt('Nhập số ngày thuê: ');
+            if (regexRentDays.test(discount)){
+                checkValid = true;
+            } else {
+                alert("Số ngày thue không hợp lệ không hợp lệ");
+            }
+        } while (!checkValid)
+        checkValid = false ;
+        //
+        cus.setName(name);
+        cus.setCmnd(cmnd);
+        cus.setBirthday(birthday);
+        cus.setEmail(email);
+        cus.setAddress(address);
+        cus.setTypeService(typeService);
+        cus.setTypeRoom(typeRoom);
+        cus.setTypeCustomer(typeCustomer);
+        cus.setDiscount(discount);
+        cus.setAmount(amount);
+        cus.setRentDays(rentDays);
+        listCustomer.push(cus);
+        alert("Đã thêm thành công");
+        displayMainMenu();
+    }
+    displayMainMenu();
+</script>
+</html>
