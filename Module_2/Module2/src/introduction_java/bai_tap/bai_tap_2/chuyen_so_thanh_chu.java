@@ -46,14 +46,18 @@ public class chuyen_so_thanh_chu {
                     System.out.println("Twenty");
                     break;
             }
-        } else {
-            hangTram(number, hangTram);
-            hangChuc(number, hangChuc);
-            hangDonVi(number, hangDonVi);
+        } else if (number < 0 || number > 999){
+            System.out.println("Số bạn nhập sai(1-999)");
+        }
+        else {
+            hangTram( hangTram);
+            hangChuc(hangChuc);
+            hangDonVi(hangDonVi);
         }
     }
-    public static void hangDonVi(int number, int donVi){
+    public static void hangDonVi(int donVi){
         switch (donVi) {
+
             case 1:
                 System.out.println("one");
                 break;
@@ -85,7 +89,7 @@ public class chuyen_so_thanh_chu {
 
     }
 
-    public static void hangChuc(int number, int chuc){
+    public static void hangChuc( int chuc){
         switch (chuc) {
             case 2:
                 System.out.println("twenty");
@@ -113,7 +117,7 @@ public class chuyen_so_thanh_chu {
                 break;
         }
     }
-    public static void hangTram(int number, int tram){
+    public static void hangTram( int tram){
         switch (tram) {
             case 1:
                 System.out.println("one hundred");
