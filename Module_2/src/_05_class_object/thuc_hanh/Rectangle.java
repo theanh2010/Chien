@@ -2,12 +2,10 @@ package _05_class_object.thuc_hanh;
 
 import java.util.Scanner;
 
-public class ClassRectangle {
-    public class Rectangle {
-        double width, height;
+public class Rectangle {
+        double width;
+        double height;
 
-        public Rectangle() {
-        }
 
         public Rectangle(double width, double height) {
             this.width = width;
@@ -24,7 +22,6 @@ public class ClassRectangle {
         public String display() {
             return "Rectangle{" + "width=" + width + ", height=" + height + "}";
         }
-    }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -34,11 +31,11 @@ public class ClassRectangle {
         System.out.print("Enter the height:");
         double height = scanner.nextDouble();
 
-//        Rectangle rectangle = new Rectangle( width, height);
-//
-//        System.out.println("Your Rectangle \n"+ rectangle.display());
-//        System.out.println("Perimeter of the Rectangle: "+ rectangle.getPerimeter());
-//        System.out.println("Area of the Rectangle: "+ rectangle.getArea());
+        Rectangle rectangle = new Rectangle(width, height);
+
+        System.out.println("Your Rectangle \n"+ rectangle.display());
+        System.out.println("Perimeter of the Rectangle: "+ rectangle.getPerimeter());
+        System.out.println("Area of the Rectangle: "+ rectangle.getArea());
 
     }
 }
