@@ -4,6 +4,7 @@ public class Circle {
     private double radius = 1;
     private String color = "red";
     double area ;
+    static int count ;
 
     Circle (){
 
@@ -11,6 +12,7 @@ public class Circle {
 
     Circle (double radius ) {
         this.radius = radius ;
+        count++;
     }
 
     public double getRadius() {
