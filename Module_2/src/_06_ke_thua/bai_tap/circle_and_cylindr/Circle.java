@@ -10,6 +10,10 @@ public class Circle {
         this.color = color ;
     }
 
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
     public double getRadius() {
         return radius;
     }
@@ -36,6 +40,8 @@ public class Circle {
                 + getRadius()
                 + "\n Diện tích: "
                 + getArea()
+                + "màu: "+
+                getColor()
                 ;
     }
 }
