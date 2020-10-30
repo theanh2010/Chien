@@ -40,7 +40,7 @@ public class Circle {
                 + getRadius()
                 + "\n Diện tích: "
                 + getArea()
-                + "màu: "+
+                + "\n màu: "+
                 getColor()
                 ;
     }

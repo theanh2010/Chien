@@ -31,7 +31,8 @@ public class Circle extends Shape {
     public String toString() {
         return "A Circle with radius="
                 + getRadius()
-                + ", which is a subclass of "
-                + super.toString();
+                + ",Diện tích :  "
+                + getPerimeter()
+               ;
     }
 }
