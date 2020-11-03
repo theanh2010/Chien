@@ -21,7 +21,7 @@ public class MyLinkedList {
         }
     }
 
-// Thêm phần tử vào mảng
+// Thêm phần tử vào
     public void add(int index, Object data) {
         Node temp = head;
         Node holder;
