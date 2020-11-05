@@ -1,5 +1,6 @@
 package _11_dsa_stack_queue.bai_tap.kiem_tra_dau_ngoac;
 
+import java.util.Scanner;
 import java.util.Stack;
 
 public class CheckBraket {
@@ -15,7 +16,7 @@ public static boolean check(String str) {
         }
 //         Nếu sym là dấu ngoặc phải:
 //         Nếu bStack rỗng, return false.
-//
+//         Còn Nếu phần tử trên cùng của stack là ngoặc trái thì xóa nó. Không thì return false
         else if( left == ')')
             if(stack.empty()) {
                 return false;
@@ -28,8 +29,10 @@ public static boolean check(String str) {
     }
     return stack.empty();
 }
-    public static void main(String[] args) {
-        String str = "(ab)";
-        System.out.println(check(str));
+        public static void main(String[] args) {
+            Scanner input = new Scanner(System.in);
+            System.out.println("Nhập chuối kiểm tra dấu ngoặc!");
+            String str = input.nextLine();
+            System.out.println(check(str));
     }
 }
