@@ -6,6 +6,7 @@ import CaseStudy.models.Services;
 import CaseStudy.models.Villa;
 import CaseStudy.view.Main;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,6 +16,8 @@ public class ManageServices extends Services {
     public static List<Villa> servicesVillaList = new ArrayList<>();
     public static List<House> servicesHouseList = new ArrayList<>();
     public static List<Room> servicesRoomList = new ArrayList<>();
+    FileWriter fileWriter ;
+    File file ;
 
     static {
         servicesVillaList.add(new Villa("Villa 1",1,2,3,"4","5","6",7,2));
@@ -46,6 +49,35 @@ public class ManageServices extends Services {
     public void addNewVilla(){
         Villa villa = new Villa(inputNameServices(), inputAreaServices(), inputCostServices(),inputMaxAmount(), inputRentalType(), inputStandardVilla(), inputComfortableDescriptionVilla(), inputAreaPoolVilla(), inputFloorVilla() );
         servicesVillaList.add(villa);
+        try {
+            fileWriter = new FileWriter("src/CaseStudy/data/Villa.csv");
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+            for (Villa villa1 : servicesVillaList){
+                bufferedWriter.write(villa1.getNameService() +","+ villa1.getOtherService());
+                bufferedWriter.newLine();
+            }
+            bufferedWriter.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    public void readDataVilla(){
+        Villa villa = new Villa();
+        file = new File("src/CaseStudy/data/Villa.csv");
+        try {
+            FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = null;
+            String[] elementsLine ;
+            while ((line = bufferedReader.readLine()) != null){
+                elementsLine = line.split(",");
+                villa.setNameService(elementsLine[0]);
+                servicesVillaList.add(villa);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
     public void addNewHouse(){
         House house = new House(inputNameServices(), inputAreaServices(), inputCostServices(),inputMaxAmount(), inputRentalType(), inputStandardVilla(),inputComfortableDescriptionVilla(),inputFloorVilla());
