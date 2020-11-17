@@ -4,6 +4,7 @@ public class IllagelTriangleException extends Exception{
     public IllagelTriangleException(double side) {
         super(side + " Lỗi tổng 2 cạnh bé hơn cạnh còn lại");
     }
+
     public IllagelTriangleException(){
         super("Cạnh bé hơn 0");
     }

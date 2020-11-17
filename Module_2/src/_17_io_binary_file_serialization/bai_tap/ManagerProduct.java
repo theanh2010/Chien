@@ -1,12 +1,7 @@
 package _17_io_binary_file_serialization.bai_tap;
-
-
-
 import CaseStudy.models.Villa;
-
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ManagerProduct extends Product {
@@ -21,11 +16,9 @@ public class ManagerProduct extends Product {
 //    }
     public ManagerProduct() {
     }
-
     public ManagerProduct(int id, String name, String amount) {
         super(id, name, amount);
     }
-
     public void addProductNew(){
         setId(count++);
         setName(inputName());
@@ -43,8 +36,9 @@ public class ManagerProduct extends Product {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Đã nhaaph thành công!");
+        System.out.println("Đã nhập thành công!");
     }
+
     public void readDataVilla(){
         file = new File("src/_17_io_binary_file_serialization/bai_tap/ProductData.csv");
         try {
