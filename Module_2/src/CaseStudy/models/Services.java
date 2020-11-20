@@ -3,12 +3,12 @@ package CaseStudy.models;
 public abstract class Services {
 
     private String nameService ;
-    private double Area ;
-    private double rentCost ;
-    private int maxAmount ;
+    private String Area ;
+    private String rentCost ;
+    private String maxAmount ;
     private String rentType ;
 
-    public Services( String nameService, double area, double rentCost, int maxAmount, String rentType) {
+    public Services( String nameService, String area, String rentCost, String maxAmount, String rentType) {
         this.nameService = nameService;
         Area = area;
         this.rentCost = rentCost;
@@ -29,27 +29,27 @@ public abstract class Services {
         this.nameService = nameService;
     }
 
-    public double getArea() {
+    public String getArea() {
         return Area;
     }
 
-    public void setArea(double area) {
+    public void setArea(String area) {
         Area = area;
     }
 
-    public double getRentCost() {
+    public String getRentCost() {
         return rentCost;
     }
 
-    public void setRentCost(double rentCost) {
+    public void setRentCost(String rentCost) {
         this.rentCost = rentCost;
     }
 
-    public int getMaxAmount() {
+    public String getMaxAmount() {
         return maxAmount;
     }
 
-    public void setMaxAmount(int maxAmount) {
+    public void setMaxAmount(String maxAmount) {
         this.maxAmount = maxAmount;
     }
 
@@ -71,7 +71,7 @@ public abstract class Services {
                 "Cost Services : " + rentCost + '\n' +
                 "Quantity Included : " + maxAmount + '\n' +
                 "Rental Type : " + rentType + '\n'
-                + "\n --------------------------------"
+
                 ;
     }
 }

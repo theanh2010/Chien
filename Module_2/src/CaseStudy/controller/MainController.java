@@ -26,7 +26,6 @@ public class MainController {
             switch (choose) {
                 case "1":
                     customerManager.addNewCustomer();
-
                     break;
                 case "2":
                     customerManager.showInformationOfCustomer();

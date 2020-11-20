@@ -3,33 +3,15 @@ package CaseStudy.models;
 public class Employee {
     private String name;
     private String dateOfBirth;
-    private int cmnd;
-    private int numPhone;
-    private String email;
     private String address;
-    private String level;
-    private String position;
-    private double salary;
-
     public  Employee(){}
 
-    public Employee(String name, String dateOfBirth,String address, int cmnd, int numPhone, String email, String level, String position, double salary) {
+    public Employee(String name, String dateOfBirth,String address) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.address = address;
-        this.cmnd = cmnd;
-        this.numPhone = numPhone;
-        this.email = email;
-        this.level = level;
-        this.position = position;
-        this.salary = salary;
     }
 
-    public Employee(String name, String dateOfBirth,String address ) {
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-        this.address = address;
-    }
 
     public String getName() {
         return name;
@@ -47,52 +29,12 @@ public class Employee {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getCmnd() {
-        return cmnd;
+    public String getAddress() {
+        return address;
     }
 
-    public void setCmnd(int cmnd) {
-        this.cmnd = cmnd;
-    }
-
-    public int getNumPhone() {
-        return numPhone;
-    }
-
-    public void setNumPhone(int numPhone) {
-        this.numPhone = numPhone;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getLevel() {
-        return level;
-    }
-
-    public void setLevel(String level) {
-        this.level = level;
-    }
-
-    public String getPosition() {
-        return position;
-    }
-
-    public void setPosition(String position) {
-        this.position = position;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     @Override

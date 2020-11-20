@@ -3,12 +3,12 @@ package CaseStudy.models;
 public class Villa extends Services {
     private String typeVilla;
     private String otherService;
-    private double poolArea;
-    private int floors;
+    private String poolArea;
+    private String floors;
 
     public Villa(){}
 
-    public Villa(String nameService, double area, double rentCost, int maxAmount, String rentType, String typeRoom, String otherService, double poolArea, int floors) {
+    public Villa(String nameService, String area, String rentCost, String maxAmount, String rentType, String typeRoom, String otherService, String poolArea, String floors) {
         super(nameService, area, rentCost, maxAmount, rentType);
         this.typeVilla = typeRoom;
         this.otherService = otherService;
@@ -32,19 +32,19 @@ public class Villa extends Services {
         this.otherService = otherService;
     }
 
-    public double getPoolArea() {
+    public String getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(double poolArea) {
+    public void setPoolArea(String poolArea) {
         this.poolArea = poolArea;
     }
 
-    public int getFloors() {
+    public String getFloors() {
         return floors;
     }
 
-    public void setFloors(int floors) {
+    public void setFloors(String floors) {
         this.floors = floors;
     }
 
@@ -55,7 +55,8 @@ public class Villa extends Services {
                 "Standard Villa : " + typeVilla + '\n' +
                 "Comfortable Description Villa : " + otherService + '\n' +
                 "Floor Villa : " + floors + '\n' +
-                "Area Pool Villa : " + poolArea;
+                "Area Pool Villa : " + poolArea
+                + "\n --------------------------------\n";
     }
 
     @Override

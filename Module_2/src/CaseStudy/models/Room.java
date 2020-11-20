@@ -2,7 +2,7 @@ package CaseStudy.models;
 
 public class Room extends Services{
     String accompaniedService ;
-    public Room( String nameService, double area, double rentCost, int maxAmount, String rentType, String accompaniedService) {
+    public Room( String nameService, String area, String rentCost, String maxAmount, String rentType, String accompaniedService) {
         super(nameService, area, rentCost, maxAmount, rentType);
         this.accompaniedService = accompaniedService;
     }

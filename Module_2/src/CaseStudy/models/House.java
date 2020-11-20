@@ -3,9 +3,9 @@ package CaseStudy.models;
 public class House  extends Services {
     private String typeRoom;
     private String otherService;
-    private int floors;
+    private String floors;
 
-    public House(String nameService, double area, double rentCost, int maxAmount, String rentType, String typeRoom, String otherService, int floors) {
+    public House(String nameService, String area, String rentCost, String maxAmount, String rentType, String typeRoom, String otherService, String floors) {
         super( nameService, area, rentCost, maxAmount, rentType);
         this.typeRoom = typeRoom;
         this.otherService = otherService;
@@ -29,11 +29,11 @@ public class House  extends Services {
         this.otherService = otherService;
     }
 
-    public int getFloors() {
+    public String getFloors() {
         return floors;
     }
 
-    public void setFloors(int floors) {
+    public void setFloors(String floors) {
         this.floors = floors;
     }
 
