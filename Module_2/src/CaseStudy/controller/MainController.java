@@ -112,11 +112,14 @@ public class MainController {
                     servicesManager.showAllRoom();
                     break;
                 case "4":
-//                showAllNameVillaNotDuplicate();
-//            case 5 :
-//                showAllNameHouseNotDuplicate();
-//            case 6 :
-//                showAllNameRoomNotDuplicate();
+                    servicesManager.showAllNameVillaNotDuplicate();
+                    break;
+                case "5" :
+                    servicesManager.showAllNameHouseNotDuplicate();
+                    break;
+                case "6" :
+                    servicesManager.showAllNameRoomNotDuplicate();
+                    break;
                 case "7":
                     showMenu();
                     break;

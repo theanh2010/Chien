@@ -7,11 +7,13 @@ import CaseStudy.models.Room;
 import CaseStudy.models.Services;
 import CaseStudy.models.Villa;
 import CaseStudy.view.Main;
+import sun.reflect.generics.tree.Tree;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.TreeSet;
 
 
 public class ManageServices extends Services {
@@ -28,6 +30,9 @@ public class ManageServices extends Services {
     public static List<Villa> servicesVillaList = new ArrayList<>();
     public static List<House> servicesHouseList = new ArrayList<>();
     public static List<Room> servicesRoomList = new ArrayList<>();
+    public static TreeSet<String> villaTreeSet = new TreeSet<>();
+    public static TreeSet<String> houseTreeSet = new TreeSet<>();
+    public static TreeSet<String> roomTreeSet = new TreeSet<>();
 
     public static List<Villa> getServicesVillaList() {
         return servicesVillaList;
@@ -146,6 +151,31 @@ public class ManageServices extends Services {
                 System.out.println(room.ShowInfor());
             }
         }
+    }
+
+    public void showAllNameVillaNotDuplicate(){
+        List<String[]> listVilla = ReadWriteFile.readFile("src/CaseStudy/data/Villa.csv");
+        for (String[] s : listVilla ){
+            villaTreeSet.add(s[0]);
+        }
+        System.out.println(villaTreeSet);
+        System.out.println("-----------------");
+    }
+    public void showAllNameHouseNotDuplicate(){
+        List<String[]> listHouse = ReadWriteFile.readFile("src/CaseStudy/data/House.csv");
+        for (String[] s : listHouse ){
+            houseTreeSet.add(s[0]);
+        }
+        System.out.println(houseTreeSet);
+        System.out.println("-----------------");
+    }
+    public void showAllNameRoomNotDuplicate(){
+        List<String[]> listRoom = ReadWriteFile.readFile("src/CaseStudy/data/Room.csv");
+        for (String[] s : listRoom ){
+            roomTreeSet.add(s[0]);
+        }
+        System.out.println(roomTreeSet);
+        System.out.println("-----------------");
     }
     @Override
     public String ShowInfor() {
