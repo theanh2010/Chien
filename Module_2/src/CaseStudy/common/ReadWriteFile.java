@@ -1,13 +1,9 @@
 package CaseStudy.common;
 
-import CaseStudy.models.Customers;
-import CaseStudy.models.House;
-import CaseStudy.models.Room;
-import CaseStudy.models.Villa;
+import CaseStudy.models.*;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ReadWriteFile {
     public static void writeFile(String filePath, String line){
@@ -22,7 +18,6 @@ public class ReadWriteFile {
         }
     }
     public static void readDataCustomer(List<Customers> customersList){
-        //        Đọc file ở đây
         File file = new File("src/CaseStudy/data/Customers.csv");
         try {
             FileReader fileReader = new FileReader(file);
@@ -56,4 +51,48 @@ public class ReadWriteFile {
         return list;
     }
 
+    public static Map<Integer, Employee> readFileEmployee(){
+        int count = 1;
+        Stack<Employee> employeeStack = new Stack<>();
+        Map<Integer, Employee> employeeMap = new TreeMap<>();
+        FileReader fileReader = null;
+        try {
+            fileReader = new FileReader("src/CaseStudy/data/Employees.csv");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = null;
+            while ((line = bufferedReader.readLine()) != null && !line.equals("")){
+                String[] elementLine = line.split(",");
+                Employee employees = new Employee(elementLine[0], elementLine[1], elementLine[2]);
+                employeeMap.put(count,employees);
+                count++;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return employeeMap;
+    }
+
+    public static Stack<Employee> readFileEmployeeStack(){
+        int count = 1;
+        Stack<Employee> employeeStack = new Stack<>();
+        FileReader fileReader = null;
+        try {
+            fileReader = new FileReader("src/CaseStudy/data/Employees.csv");
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String line = null;
+            while ((line = bufferedReader.readLine()) != null && !line.equals("")){
+                String[] elementLine = line.split(",");
+                Employee employees = new Employee(elementLine[0], elementLine[1], elementLine[2]);
+                employeeStack.push(employees);
+                count++;
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return employeeStack;
+    }
 }

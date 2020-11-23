@@ -25,6 +25,8 @@ public class ManageCustomers implements IManageCustomers{
     public static List<Villa> listVilla =  ManageServices.getServicesVillaList();
     public static List<House> listHouse =  ManageServices.getServicesHouseList();
     public static List<Room> listRoom = ManageServices.getServicesRoomList();
+    public static Queue<Customers> listTicket = new LinkedList<>();
+    public static int count = 1;
 
     public ManageCustomers(){
     }
@@ -43,7 +45,8 @@ public class ManageCustomers implements IManageCustomers{
         System.out.println("Chọn Services"+
                 "\n 1.Villa "+
                 "\n 2.House" +
-                "\n 3.Room");
+                "\n 3.Room" +
+                "\n 4.Cinema Ticket");
         switch (Main.inputScanner().nextInt()){
             case 1:{
                 System.out.println("Chọn Villa!");
@@ -84,6 +87,23 @@ public class ManageCustomers implements IManageCustomers{
                 showInformationOfCustomer();
                 break;
             }
+            case 4:{
+                String temp = "vé số " + count;
+                if (count <= 2){
+                    System.out.println("Bạn đã mua vé xem phim, vé số " + count);
+                } else {
+                    System.out.println("Đã bán hết vé.");
+                    System.out.println("Danh sách khách hàng mua vé!");
+                    showTicket();
+                    break;
+                }
+                count++;
+                Customers customer = new Customers(id,nameCustomer,birthday,cmnd,phoneNumber,email,typeCustomer,address,temp);
+                listTicket.add(customer);
+                customerList.add(customer);
+                ReadWriteFile.writeFile("src/CaseStudy/data/Customers.csv",customer.getId() +","+ customer.getNameCustomer()+","+customer.getBirthday()+","+customer.getCmnd()+","+customer.getPhoneNumber()+","+customer.getEmail()+","+customer.getTypeCustomer()+","+customer.getAddress()+ ","+ temp);
+                break;
+            }
         }
     }
     private String inputNameCustomer() {
@@ -116,6 +136,14 @@ public class ManageCustomers implements IManageCustomers{
 
     public  void readDataCustomer() {
         ReadWriteFile.readDataCustomer(customerList);
+    }
+    public void showTicket(){
+        for (Customers customers : listTicket){
+            System.out.println(customers.getId() + "\n"
+                   + customers.getNameCustomer() +
+                    "\n" + customers.getTypeServices() +
+            "\n ----------------");
+        }
     }
 
     public void showInformationOfCustomer(){

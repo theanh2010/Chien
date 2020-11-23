@@ -20,6 +20,11 @@ public class ManageServices extends Services {
     public  static final String REGEX_COST = "^[1-9][0-9]|[0-9]+$" ;
     public  static final String REGEX_AMOUNT = "^[0][1-9]|[1][0-9]|[2][0]$" ;
     public  static final String REGEX_BONUS = "(massage)|(karaoke)|(food)|(drink)|(car)" ;
+    public  static final String NAME_ERROR = "NHập tên sai định dạng, nhập lai!" ;
+    public  static final String INT_ERROR = "Nhập số sai định dạng, nhập lại số nguyên dương!" ;
+    public  static final String COST_ERROR = "Nhập giá sai, nhập lại" ;
+    public  static final String AMOUNT_ERROR = "Nhập số lượng sai, nhập lại" ;
+    public  static final String BONUS_SERVICE = "Nhập dịch vụ kèm theo sai, nhập lại" ;
     public static List<Villa> servicesVillaList = new ArrayList<>();
     public static List<House> servicesHouseList = new ArrayList<>();
     public static List<Room> servicesRoomList = new ArrayList<>();
@@ -38,20 +43,15 @@ public class ManageServices extends Services {
 
     public ManageServices(){}
 
-    public ManageServices(String nameService, String area, String rentCost, String maxAmount, String rentType) {
-        super( nameService, area, rentCost, maxAmount, rentType);
-    }
 
     public void addNewVilla(){
         Villa villa = new Villa(inputNameServices(), inputAreaServices(), inputCostServices(),inputMaxAmount(), inputRentalType(), inputStandardVilla(), inputComfortableDescriptionVilla(), inputAreaPoolVilla(), inputFloorVilla() );
         servicesVillaList.add(villa);
-//        ReadWriteFile.writeDataVilla(servicesVillaList);
         ReadWriteFile.writeFile("src/CaseStudy/data/Villa.csv",villa.getNameService() +","+ villa.getArea()+","+villa.getRentCost()+","+villa.getMaxAmount()+","+villa.getRentType()+","+villa.getTypeRoom()+","+villa.getOtherService()+","+villa.getPoolArea()+","+villa.getFloors());
     }
     public void addNewHouse(){
         House house = new House(inputNameServices(), inputAreaServices(), inputCostServices(),inputMaxAmount(), inputRentalType(), inputStandardVilla(), inputComfortableDescriptionVilla(), inputFloorVilla() );
         servicesHouseList.add(house);
-//        ReadWriteFile.writeDataHouse(servicesHouseList);
         ReadWriteFile.writeFile("src/CaseStudy/data/House.csv",house.getNameService() +","+ house.getArea()+","+house.getRentCost()+","+house.getMaxAmount()+","+house.getRentType()+","+house.getTypeRoom()+","+house.getOtherService()+","+house.getFloors());
     }
 
@@ -59,46 +59,45 @@ public class ManageServices extends Services {
         String accompaniedService = "FREE";
         Room room = new Room(inputNameServices(), inputAreaServices(), inputCostServices(),inputMaxAmount(), inputRentalType(),accompaniedService);
         servicesRoomList.add(room);
-//        ReadWriteFile.writeDataRoom(servicesRoomList);
         ReadWriteFile.writeFile("src/CaseStudy/data/Room.csv",room.getNameService() +","+ room.getArea()+","+room.getRentCost()+","+room.getMaxAmount()+","+ room.getRentType()+","+ accompaniedService);
     }
 
     private String inputNameServices() {
         System.out.println("Input name services :  ");
-        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_STR);
+        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_STR,NAME_ERROR);
     }
     private String inputAreaServices() {
         System.out.println("Input area services :  ");
-        return RegexData.regexInt(Main.inputScanner().nextLine(),REGEX_INT);
+        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_INT,INT_ERROR);
     }
     private String inputCostServices() {
         System.out.println("Input cost services :  ");
-        return RegexData.regexCost(Main.inputScanner().nextLine(), REGEX_COST);
+        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_COST,COST_ERROR);
     }
     private String inputMaxAmount() {
         System.out.println("Soos luongwj thuee :  ");
-        return RegexData.regexAmount(Main.inputScanner().nextLine(), REGEX_AMOUNT);
+        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_AMOUNT,AMOUNT_ERROR);
     }
 
     private String inputRentalType() {
         System.out.println("Input rental type :  ");
-        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_STR);
+        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_STR,NAME_ERROR);
     }
     private String inputStandardVilla() {
         System.out.println("Input Standard Villa :  ");
-        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_STR);
+        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_STR,NAME_ERROR);
     }
     private String inputComfortableDescriptionVilla() {
         System.out.println("Input Comfortable Description Villa :  ");
-        return RegexData.regexBonusServices(Main.inputScanner().nextLine(), REGEX_BONUS);
+        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_BONUS,BONUS_SERVICE);
     }
     private String inputFloorVilla() {
         System.out.println("Input Floor Villa :  ");
-        return RegexData.regexInt(Main.inputScanner().nextLine(),REGEX_INT);
+        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_INT,INT_ERROR);
     }
     private String inputAreaPoolVilla() {
         System.out.println("Input pool villa :  ");
-        return Main.inputScanner().nextLine();
+        return RegexData.regexStr(Main.inputScanner().nextLine(),REGEX_INT,INT_ERROR);
     }
     public void showAllVilla(){
         List<String[]> listVilla = ReadWriteFile.readFile("src/CaseStudy/data/Villa.csv");
@@ -131,9 +130,6 @@ public class ManageServices extends Services {
                 System.out.println(house.ShowInfor());
             }
         }
-//        for (Services house : servicesHouseList){
-//            System.out.println(house.ShowInfor());
-//        }
     }
     public void showAllRoom(){
         List<String[]> listRoom = ReadWriteFile.readFile("src/CaseStudy/data/Room.csv");
@@ -150,9 +146,6 @@ public class ManageServices extends Services {
                 System.out.println(room.ShowInfor());
             }
         }
-//        for (Services room : servicesRoomList){
-//            System.out.println(room.ShowInfor());
-//        }
     }
     @Override
     public String ShowInfor() {

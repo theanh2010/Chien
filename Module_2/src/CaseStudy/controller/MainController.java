@@ -13,14 +13,13 @@ public class MainController {
         System.out.println("chọn chức năng");
         System.out.println("1. Add New Customer");
         System.out.println("2. Show Information Of Customer");
-//        System.out.println("5. Add New Booking");
         System.out.println("3. Show Information Of Employee");
+        System.out.println("5. Add New Service");
         System.out.println("4. Exit");
         System.out.println("--------------------------------------------------");
         String choose ;
         boolean isExit = false;
         ManageCustomers customerManager = new ManageCustomers();
-        int customerId;
         while (true) {
             choose = input.nextLine();
             switch (choose) {

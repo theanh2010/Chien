@@ -40,7 +40,7 @@ public class Employee {
     @Override
     public String toString() {
         return " Name Employee : " + name + "\n" +
-                " Age Employee : " + dateOfBirth + "\n" +
+                " ID Employee : " + dateOfBirth + "\n" +
                 " Address Employee : " + address + "\n"+
                 "-------------------------------------------------";
     }
